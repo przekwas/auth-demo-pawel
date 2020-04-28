@@ -10,6 +10,7 @@ CREATE TABLE users (
 CREATE TABLE tokens (
     id INT AUTO_INCREMENT,
     userid INT NOT NULL,
+    uniq VARCHAR(255) NOT NULL,
     jwt VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
