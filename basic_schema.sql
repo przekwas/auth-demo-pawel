@@ -1,0 +1,19 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(60) NOT NULL,
+    role VARCHAR(10) DEFAULT 'guest',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE tokens (
+    id INT AUTO_INCREMENT,
+    userid INT NOT NULL,
+    jwt VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (userid)
+        REFERENCES users (id)
+        ON DELETE CASCADE
+);
