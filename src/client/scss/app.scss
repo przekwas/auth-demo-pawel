@@ -1,5 +1,39 @@
 $theme-colors: (
-    'primary': #0091ea //Covalence Blue!  :D
+	'primary': #0091ea //Covalence Blue!  :D
 );
+
+.search-icon {
+	position: absolute !important;
+	right: 10;
+	color: #a9a9a9;
+	cursor: pointer;
+}
+
+.search-bar {
+	display: flex !important;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+
+	height: 0px;
+	width: 100%;
+	display: block;
+	opacity: 0;
+
+	transition-timing-function: ease-in;
+	transition: 0s;
+}
+
+.search-bar-active {
+	height: 50px;
+	opacity: 1;
+
+	transition-timing-function: ease-out;
+	transition: 2s;
+}
+
+.nav-link {
+	text-decoration: none;
+}
 
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
